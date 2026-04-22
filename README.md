@@ -210,18 +210,31 @@ This simulates **multi-user SaaS behavior**.
 
 ## 🐳 Docker Support
 
-```yaml
-# docker-compose.yml (optional enhancement)
-services:
-  backend:   # FastAPI container
-  db:        # PostgreSQL container
-```
+This project includes Docker support for the frontend, backend, and PostgreSQL database.
 
-Run everything with:
+Build the Docker images:
 
 ```bash
-docker-compose up --build
+docker compose build
 ```
+
+Start the full stack:
+
+```bash
+docker compose up --build
+```
+
+Run it in detached mode:
+
+```bash
+docker compose up -d --build
+```
+
+Available services:
+
+- Frontend: `http://localhost:5173`
+- Backend: `http://localhost:8000`
+- Swagger UI: `http://localhost:8000/docs`
 
 ---
 

@@ -2,6 +2,7 @@ import axios from 'axios'
 
 const TOKEN_KEY = 'jwt_token'
 const USER_KEY = 'task_user'
+const API_BASE_URL = import.meta.env.VITE_API_BASE_URL || 'http://127.0.0.1:8000/api/v1'
 
 export const TASK_STATUS_OPTIONS = [
   { value: 'pending', label: 'Pending' },
@@ -10,7 +11,7 @@ export const TASK_STATUS_OPTIONS = [
 ]
 
 const api = axios.create({
-  baseURL: 'http://127.0.0.1:8000/api/v1',
+  baseURL: API_BASE_URL,
   headers: {
     'Content-Type': 'application/json',
   },
